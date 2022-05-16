@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Rosters() {
   return (
     <div>
-      <h2>Roster Page for specific teams</h2>
+      <h2>This is a specific team's roster page</h2>
     </div>
   );
 }
