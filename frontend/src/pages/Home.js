@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// const cors = require("cors");
 
 function Home() {
   const url =
@@ -17,12 +16,26 @@ function Home() {
   }, []);
 
   return (
+    //FIXME: Running into too many requests. need to save information into mongoDB
     <div>
-      <h2>Home Page of all Teams</h2>
+      <h1>Home Page of all Teams</h1>
+      <h2>Eastern Conference</h2>
       {list && (
         <>
           {list.map((team, index) => {
-            return <div key={index}>{team.full_name}</div>;
+            if (team.conference === "East") {
+              return <div key={index}>{team.full_name}</div>;
+            }
+          })}
+        </>
+      )}
+      <h2>Western Conference</h2>
+      {list && (
+        <>
+          {list.map((team, index) => {
+            if (team.conference === "West") {
+              return <div key={index}>{team.full_name}</div>;
+            }
           })}
         </>
       )}
