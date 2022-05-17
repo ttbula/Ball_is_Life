@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 function Home() {
   const url =
     "https://cors-anywhere.herokuapp.com/https://balldontlie.io/api/v1/teams";
-  //   const url = "https://balldontlie.io/api/v1/players?page=151";
   const [list, setList] = useState();
   async function fetchData() {
     const response = await fetch(url);
